@@ -199,7 +199,10 @@ static cl::list<std::string>
                 cl::desc("Load passes from plugin library"));
 
 static cl::opt<std::string> UnifiedLTOMode("unified-lto", cl::Optional,
-                                           cl::desc("Set LTO mode"),
+                                           cl::desc("Set LTO mode with the following options:\n"
+                                                    " thin      ThinLTO, with Unified LTO enabled.\n"
+                                                    " full      Regular LTO, with Unified LTO enabled.\n"
+                                                    " default   Any LTO mode without Unified LTO. The default mode."),
                                            cl::value_desc("mode"));
 
 static cl::opt<bool> EnableFreestanding(
